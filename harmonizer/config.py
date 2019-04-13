@@ -3,7 +3,7 @@ from schema import Schema, Optional, And
 
 HANDLED_MIME_TYPES = ["audio/mp3", "audio/mpeg", "audio/flac", "audio/mp4", "audio/m4a"]
 HANDLED_ENRICHMENTS = ["discogs", "spotify"]
-HANDLED_BITRATES = ["320k", "192k", "128k"]
+HANDLED_BITRATES = [320, 192, 128]
 HANDLED_MANDATORY_TAGS = [
     "title",
     "artist",
@@ -21,7 +21,7 @@ CONFIG_SCHEMA = Schema(
     {
         "output_bitrate": And(
             lambda x: x in HANDLED_BITRATES,
-            error="Output bit rate must be 128k, 192k or 320k",
+            error="Output bit rate must be 128, 192 or 320",
         ),
         Optional("enrichments"): {
             Optional(
@@ -44,8 +44,9 @@ CONFIG_SCHEMA = Schema(
                 error="One of the accepted_input_mime_types you defined is not supported as input.",
             ),
             Optional("minimum_input_bitrate"): And(
+                int,
                 lambda x: x in HANDLED_BITRATES,
-                error="The minimum_input_bitrate is not 320k, 192k or 128k",
+                error="The minimum_input_bitrate is not 320, 192 or 128",
             ),
             Optional("required_enrichments"): And(
                 lambda required_enrichments: all(

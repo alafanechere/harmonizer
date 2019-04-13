@@ -126,7 +126,7 @@ def test_full_manip(various_samples):
             normalized_sound, s_out
         )
         assert audio_format == "mp3"
-        assert bitrate == "192k"
+        assert bitrate == 192
         _, ext = os.path.splitext(output_path)
         assert ext == ".mp3"
         exported_sound = eyed3.load(output_path)

@@ -1,4 +1,4 @@
-output_bitrate: 192k # 128k, 192k or 320k
+output_bitrate: 192 # 128k, 192k or 320k
 enrichments:
   discogs:
     discogs_token: XXX
@@ -15,5 +15,5 @@ validations:
     - audio/mp4
     - audio/flac
     - audio/m4a
-  minimum_input_bitrate: 192k # 128k, 192k or 320k
+  minimum_input_bitrate: 192 # 128, 192 or 320
 normalization_headroom: 0.1 # Normalize audio at 90% of maximum

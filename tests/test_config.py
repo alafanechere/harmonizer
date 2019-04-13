@@ -6,7 +6,7 @@ from harmonizer import config
 @pytest.fixture
 def valid_config():
     return {
-        "output_bitrate": "192k",
+        "output_bitrate": 192,
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
             "spotify": {"sp_client_id": "xxx", "sp_client_secret": "xxx"},
@@ -15,7 +15,7 @@ def valid_config():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -23,7 +23,7 @@ def valid_config():
 @pytest.fixture
 def bad_bitrate_config():
     return {
-        "output_bitrate": "191k",
+        "output_bitrate": 191,
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
             "spotify": {"sp_client_id": "xxx", "sp_client_secret": "xxx"},
@@ -32,7 +32,7 @@ def bad_bitrate_config():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -40,7 +40,7 @@ def bad_bitrate_config():
 @pytest.fixture
 def bad_enrichments_config():
     return {
-        "output_bitrate": "192k",
+        "output_bitrate": 192,
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
             "deezer": {"sp_client_id": "xxx", "sp_client_secret": "xxx"},
@@ -49,7 +49,7 @@ def bad_enrichments_config():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -57,7 +57,7 @@ def bad_enrichments_config():
 @pytest.fixture
 def bad_required_enrichments_config():
     return {
-        "output_bitrate": "320k",
+        "output_bitrate": 320,
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
             "spotify": {"sp_client_id": "xxx", "sp_client_secret": "xxx"},
@@ -66,7 +66,7 @@ def bad_required_enrichments_config():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "deezer"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -74,7 +74,7 @@ def bad_required_enrichments_config():
 @pytest.fixture
 def bad_mime_types_enrichments_config():
     return {
-        "output_bitrate": "128k",
+        "output_bitrate": 128,
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
             "spotify": {"sp_client_id": "xxx", "sp_client_secret": "xxx"},
@@ -83,7 +83,7 @@ def bad_mime_types_enrichments_config():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/wav", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -99,7 +99,7 @@ def missing_mandatory_config():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -107,7 +107,7 @@ def missing_mandatory_config():
 @pytest.fixture
 def unexisting_validation_config():
     return {
-        "output_bitrate": "192k",
+        "output_bitrate": 192,
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
             "spotify": {"sp_client_id": "xxx", "sp_client_secret": "xxx"},
@@ -116,7 +116,7 @@ def unexisting_validation_config():
             "mandatory_togs": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -124,7 +124,7 @@ def unexisting_validation_config():
 @pytest.fixture
 def invalid_min_max_bitrate():
     return {
-        "output_bitrate": "192k",
+        "output_bitrate": 192,
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
             "spotify": {"sp_client_id": "xxx", "sp_client_secret": "xxx"},
@@ -133,7 +133,7 @@ def invalid_min_max_bitrate():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "190k",
+            "minimum_input_bitrate": 190,
         },
     }
 
@@ -141,7 +141,7 @@ def invalid_min_max_bitrate():
 @pytest.fixture
 def valid_config_with_optional():
     return {
-        "output_bitrate": "192k",
+        "output_bitrate": 192,
         "normalization_headroom": 0.2,
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
@@ -151,7 +151,7 @@ def valid_config_with_optional():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -159,7 +159,7 @@ def valid_config_with_optional():
 @pytest.fixture
 def normalization_headroom_too_high():
     return {
-        "output_bitrate": "192k",
+        "output_bitrate": 192,
         "normalization_headroom": {"active": True, "normalization_headroom": "1.2"},
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
@@ -169,7 +169,7 @@ def normalization_headroom_too_high():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -177,7 +177,7 @@ def normalization_headroom_too_high():
 @pytest.fixture
 def normalization_headroom_bad_float():
     return {
-        "output_bitrate": "192k",
+        "output_bitrate": 192,
         "normalization_headroom": {"active": True, "normalization_headroom": 0.01},
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
@@ -187,7 +187,7 @@ def normalization_headroom_bad_float():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -195,7 +195,7 @@ def normalization_headroom_bad_float():
 @pytest.fixture
 def normalization_headroom_bad_type():
     return {
-        "output_bitrate": "192k",
+        "output_bitrate": 192,
         "normalization_headroom": 20,
         "enrichments": {
             "discogs": {"discogs_token": "xxx"},
@@ -205,7 +205,7 @@ def normalization_headroom_bad_type():
             "mandatory_tags": ["artist", "album", "title"],
             "accepted_input_mime_types": ["audio/mp3", "audio/flac", "audio/mp4"],
             "required_enrichments": ["discogs", "spotify"],
-            "minimum_input_bitrate": "192k",
+            "minimum_input_bitrate": 192,
         },
     }
 
@@ -248,7 +248,7 @@ def test_valid_config_optional(valid_config_with_optional):
 def test_bad_bitrate_config(bad_bitrate_config):
     with pytest.raises(schema.SchemaError) as excinfo:
         config.parse(bad_bitrate_config)
-    assert "Output bit rate must be 128k, 192k or 320k" in str(excinfo.value)
+    assert "Output bit rate must be 128, 192 or 320" in str(excinfo.value)
 
 
 def test_bad_required_enrichments_config(bad_required_enrichments_config):
@@ -260,8 +260,9 @@ def test_bad_required_enrichments_config(bad_required_enrichments_config):
 def test_bad_mime_types_config(bad_mime_types_enrichments_config):
     with pytest.raises(schema.SchemaError) as excinfo:
         config.parse(bad_mime_types_enrichments_config)
-    assert "One of the accepted_input_mime_types you defined is not supported as input." in str(
-        excinfo.value
+    assert (
+        "One of the accepted_input_mime_types you defined is not supported as input."
+        in str(excinfo.value)
     )
 
 
@@ -281,4 +282,4 @@ def test_unexisting_validation_config(unexisting_validation_config):
 def test_invalid_min_bitrate(invalid_min_max_bitrate):
     with pytest.raises(schema.SchemaError) as excinfo:
         config.parse(invalid_min_max_bitrate)
-    assert "The minimum_input_bitrate is not 320k, 192k or 128k" in str(excinfo.value)
+    assert "The minimum_input_bitrate is not 320, 192 or 128" in str(excinfo.value)

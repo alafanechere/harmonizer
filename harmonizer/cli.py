@@ -66,6 +66,9 @@ def harmonize_directory(
         for error in e.errors:
             if error is not None:
                 logger.error(error)
+        logger.error(
+            "Could not parse the config, it does not have the expected schema."
+        )
         sys.exit(1)
 
     valid_extensions = [
@@ -83,12 +86,14 @@ def harmonize_directory(
                 f, audio_output_dir, json_output_dir, image_output_dir, parsed_config
             )
             process_time = time.time() - start_time
-            if len(results["validation_errors"]) == 0:
-                logger.info(
-                    f"Succesfully processed file {f} in {int(process_time)} seconds."
+            f = os.path.basename(f)
+            if len(results["validation_errors"]) > 0:
+                logger.warning(
+                    f"Validation error for {f}: {results['validation_errors']}"
                 )
-            else:
-                logger.warning(results["validation_errors"])
+            logger.info(
+                f"Successfully processed file {f} in {int(process_time)} seconds."
+            )
 
 
 def harmonize_file(
@@ -120,7 +125,7 @@ def harmonize_file(
         enrichments_metadata = {}
 
     is_valid, validations_metadata = validations.validate(
-        parsed_config.get(validations, {}),
+        parsed_config.get("validations", {}),
         tags=manipulation_metadata.get("tags"),
         output_bitrate=manipulation_metadata["export"].get("output_bitrate"),
         input_bitrate=manipulation_metadata.get("original_bitrate"),

@@ -40,6 +40,8 @@ Linux: `$ sudo apt install ffmpeg`
 OS X : `$ brew install libmagic`\
 Linux: `$ sudo apt install libmagic-dev`
 
+**fpcalc**: \
+Install [Chromaprint](https://acoustid.org/chromaprint) and add the executable to your path.
 
 ### Pip
 `$ pip install harmonizer`

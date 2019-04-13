@@ -43,7 +43,7 @@ def get_cover_art(file_path, image_output_dir):
     audio = mutagen.File(file_path)
     raw_bytes = None
     if audio is not None:
-        for t in ["covr", "APIC:cover"]:
+        for t in ["covr", "APIC:cover", "APIC:"]:
             if t in audio:
                 try:
                     raw_bytes = audio[t].data

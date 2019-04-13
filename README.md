@@ -7,14 +7,14 @@ The library comes shipped with a CLI tools which allow you to process audio file
 ## What it does
 * **Audio conversion**: Converts FLAC, MP3, AAC (m4a) to MP3 (128k, 192k, 320).
 * **Audio normalization**: Peak normalize your input audio. Normalization is expressed in headroom ratio (0.1 means max peak will me 90% of the maximum volume).
-* Metadata extraction : 
+* **Metadata extraction** : 
     * Audio tags:  extracted from the audio and written to the JSON metadata results.
     * Audio fingerprinting: [Chromaprint](https://acoustid.org/chromaprint) fingerprinting extracted from the audio and written to the JSON metadata results. 
-* Metadata enrichment:
+* **Metadata enrichment**:
     * Use Discogs API to find the releases related to the audio track. Get your tokens [here](https://www.discogs.com/developers/)
     * Use Spotify API to find the audio track in their catalog. Get your API secrets [here](https://developer.spotify.com/documentation/web-api/)
-* Covert Art extraction (MP3 only) : extract the covert art to an image file.
-* Validation : run various integrity check to assert the input audio respects the rules you defined in the your config.
+* **Covert Art extraction (MP3 only)** : extract the covert art to an image file.
+* **Validation** : run various integrity check to assert the input audio respects the rules you defined in the your config.
     * Minimum input bit rate (MP3 only)
     * Mandatory audio tags
     * Accepted input mime types

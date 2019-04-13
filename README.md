@@ -1,11 +1,14 @@
 # HARMONIZER
+[![PyPI version](https://badge.fury.io/py/harmonizer.svg)](https://badge.fury.io/py/harmonizer)
+![PyPI - Python Version](https://img.shields.io/pypi/pyversions/harmonizer.svg)
+
 This library helps you to **convert**, **normalize**, **enrich** and **validate** your music library.
 It fullfills the need we have at [imr.party](https://imr.party) to harmonize the music library of our webradio.
 
 The library comes shipped with a CLI tools which allow you to process audio files in a directory to create normalized mp3 versions of all files, enrich their metadata from various sources (Discogs, Spotify).
 
 ## What it does
-* **Audio conversion**: Converts FLAC, MP3, AAC (m4a) to MP3 (128k, 192k, 320).
+* **Audio conversion**: Converts FLAC, MP3, AAC (m4a) to MP3 (128k, 192k, 320k).
 * **Audio normalization**: Peak normalize your input audio. Normalization is expressed in headroom ratio (0.1 means max peak will me 90% of the maximum volume).
 * **Metadata extraction** : 
     * Audio tags:  extracted from the audio and written to the JSON metadata results.
@@ -34,7 +37,7 @@ OS X : `$ brew install ffmpeg`\
 Linux: `$ sudo apt install ffmpeg`
 
 ### Pip
-`pip install harmonizer`
+`$ pip install harmonizer`
 
 ## CLI usage
 ```bash

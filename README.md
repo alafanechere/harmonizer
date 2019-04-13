@@ -31,10 +31,15 @@ All file processing will create 2 or 3 files :
 
 ## Install
 ### System dependency
-You need to have **ffmpeg** on your system :
 
+**ffmpeg**:\
 OS X : `$ brew install ffmpeg`\
 Linux: `$ sudo apt install ffmpeg`
+
+**libmagic**:\
+OS X : `$ brew install libmagic`\
+Linux: `$ sudo apt install libmagic-dev`
+
 
 ### Pip
 `$ pip install harmonizer`

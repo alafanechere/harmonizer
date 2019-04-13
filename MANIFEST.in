@@ -1,0 +1,4 @@
+include LICENSE
+include logme.ini
+include example_config.yml
+include README.md

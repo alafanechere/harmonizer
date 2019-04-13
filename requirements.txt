@@ -1,0 +1,12 @@
+eyed3
+pydub
+pyacoustid
+mutagen
+discogs-client
+spotipy
+titlecase
+click
+pyyaml
+logme
+schema
+pytest

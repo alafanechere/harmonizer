@@ -21,6 +21,11 @@ from harmonizer import config, enrichments, manipulations, validations
 @click.argument(
     "audio_output_dir", type=click.Path(exists=True, file_okay=False, dir_okay=True)
 )
+@click.argument(
+    "conf",
+    type=click.Path(exists=True, file_okay=True, dir_okay=False),
+    envvar="HARMONIZER_CONF",
+)
 @click.option(
     "--json-out",
     "json_output_dir",
@@ -33,20 +38,13 @@ from harmonizer import config, enrichments, manipulations, validations
     type=click.Path(exists=True, file_okay=False, dir_okay=True),
     help="Path to directory to which extracted cover arts will be written to.",
 )
-@click.option(
-    "--conf",
-    "-c",
-    type=click.Path(exists=True, file_okay=True, dir_okay=False),
-    envvar="HARMONIZER_CONF",
-    help="Path to your Harmonizer YAML configuration.",
-)
 @logme.log(name="Harmonizer CLI")
 def harmonize_directory(
     audio_input_dir,
     audio_output_dir,
+    conf,
     json_output_dir,
     image_output_dir,
-    conf,
     logger=None,
 ):
     if json_output_dir is None:

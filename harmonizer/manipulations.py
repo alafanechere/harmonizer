@@ -18,8 +18,10 @@ def normalize(sound, headroom=0.1):
     return sound.dBFS, normalized.dBFS, change_in_dbfs, normalized
 
 
-def export(sound, output_path, audio_format="mp3", bitrate="192k", tags={}):
-    sound.export(output_path, format=audio_format, bitrate=bitrate, tags=tags)
+def export(sound, output_path, audio_format="mp3", bitrate=192, tags={}):
+    sound.export(
+        output_path, format=audio_format, bitrate=str(bitrate) + "k", tags=tags
+    )
     return audio_format, bitrate, output_path
 
 
@@ -87,7 +89,7 @@ def pipeline(
     output_audio_format="mp3",
     active_normalize=False,
     normalization_headroom=0.1,
-    target_bitrate="192k",
+    target_bitrate=192,
     capitalized_tags=True,
 ):
     mime_type, tags = extract_file_metadata(local_audio_path)

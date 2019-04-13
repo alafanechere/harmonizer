@@ -41,7 +41,7 @@ Linux: `$ sudo apt install ffmpeg`
 
 ## CLI usage
 ```bash
-Usage: harmonizer [OPTIONS] AUDIO_INPUT_DIR AUDIO_OUTPUT_DIR
+Usage: cli.py [OPTIONS] AUDIO_INPUT_DIR AUDIO_OUTPUT_DIR CONF
 
   Please provide an audio_input_dir path and an audio_output_dir path to
   launch harmonization of your files.
@@ -51,7 +51,6 @@ Options:
                         written to.
   --img-out DIRECTORY   Path to directory to which extracted cover arts will
                         be written to.
-  -c, --conf FILE       Path to your Harmonizer YAML configuration.
   --help                Show this message and exit.
 
 ```

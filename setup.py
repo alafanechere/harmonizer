@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setup(
     name="harmonizer",
-    version="0.1.1",
+    version="0.1.2",
     package_data={"": ["logme.ini"]},
     description="Harmonizes your audio media: converts, normalizes, enriches and validates.",
     long_description=long_description,

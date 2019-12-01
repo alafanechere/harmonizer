@@ -85,7 +85,7 @@ def discogs_enrich(artist, album, discogs_token, client_user_agent="ingestion"):
 
     try:
         results = discogs_client.search(f"{artist} {album}", type="release")
-        results = [r.data for r in results]
+        results = [r.data for r in results.page(1)]
     except discogs_api.exceptions.HTTPError as e:
         if hasattr(e, "message") and "too quickly" in e.message:
             raise TooMuchRequests("You're making too much requests to discogs")

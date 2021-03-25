@@ -33,7 +33,7 @@ setup(
         "spotipy==2.4.4",
         "titlecase==0.12.0",
         "click==7.0",
-        "pyyaml==5.1",
+        "pyyaml==5.4",
         "logme==1.3.2",
         "schema==0.7.0",
     ],

@@ -30,7 +30,7 @@ setup(
         "pyacoustid==1.1.5",
         "mutagen==1.42.0",
         "discogs-client==2.2.2",
-        "spotipy==2.4.4",
+        "spotipy==2.22.1",
         "titlecase==0.12.0",
         "click==7.0",
         "pyyaml==5.1",
